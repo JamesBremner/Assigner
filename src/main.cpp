@@ -7,6 +7,17 @@
 #include <wex.h>
 #include "cStarterGUI.h"
 
+#include "cTask.h"
+#include "cAgent.h"
+#include "cAssign.h"
+#include "cSlot.h"
+
+ std::vector< cTask* > cTask::theTasks;
+ std::vector< cAgent* > cAgent::theAgents;
+ std::vector< cAssign* > cAssign::theAssigns;
+ std::vector< cSlot* > cSlot::theSlots;
+
+
 class cGUI : public cStarterGUI
 {
 public:
@@ -16,8 +27,11 @@ public:
               {50, 50, 1000, 500}),
           lb(wex::maker::make < wex::label >(fm))
     {
-        lb.move(50, 50, 100, 30);
-        lb.text("Hello World");
+
+        unitTest();
+
+        lb.move(50, 50, 150, 30);
+        lb.text("Unit tests passed");
 
         show();
         run();
