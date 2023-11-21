@@ -11,6 +11,9 @@ protected:
 
     std::vector<std::pair<cTask*, double>> myTasks;
 
+    static std::vector<std::string> vFamily; // family group names
+    int myFamily;                            // family group index
+
 public:
 
     /// CTOR
@@ -22,6 +25,8 @@ public:
     {
         return myName;
     }
+
+    std::string text();
 
     static void clear()
     {
@@ -40,4 +45,6 @@ public:
     {
         return theAgents;
     }
+
+    static std::string specText();
 };

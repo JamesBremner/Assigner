@@ -13,9 +13,9 @@
 #include "cSlot.h"
 
  std::vector< cTask* > cTask::theTasks;
- std::vector< cAgent* > cAgent::theAgents;
+
  std::vector< cAssign* > cAssign::theAssigns;
- std::vector< cSlot* > cSlot::theSlots;
+
 
 
 class cGUI : public cStarterGUI

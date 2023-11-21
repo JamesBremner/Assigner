@@ -13,3 +13,5 @@ void readstring(
 
 bool unitTest();
 
+std::string specText();
+

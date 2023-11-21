@@ -20,23 +20,12 @@ void input(
         while (getline(sst, a, ' '))
             if (a.length())
                 vtoken.push_back(a);
-        int p;
 
         switch (line[0])
         {
 
         case 'a':
-            p = line.find(" ");
-            p = line.find(" ", p + 1);
-            p = line.find(" ", p + 1);
-            p = line.find(" ", p + 1);
             cAgent::add(vtoken);
-
-            // cAgent::add(
-            //     vtoken[1],
-            //     line.substr(p + 1),
-            //     atof(vtoken[2].c_str()),
-            //     vtoken[3]);
             break;
 
         case 'g':
@@ -68,4 +57,12 @@ void readstring(
 {
     std::stringstream ins(sin);
     input(ins);
+}
+
+std::string specText()
+{
+    std::string ret;
+    ret += cAgent::specText();
+    ret += cSlot::specText();
+    return ret;
 }

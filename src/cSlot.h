@@ -2,41 +2,48 @@
 
 class cSlot
 {
-    protected:
-    static std::vector< cSlot* > theSlots;
+protected:
+
+    static std::vector<cSlot *> theSlots;
 
     std::string myName;
 
-    public:
+    std::vector<cTask *> myTasks;
 
-    cSlot(  const std::string& name )
-    : myName( name )
-    {}
+public:
+    cSlot(const std::vector<std::string> &vtoken);
 
     std::string name() const
     {
         return myName;
     }
 
+    std::string text();
+
     static void clear()
     {
-        for( auto* pa : theSlots )
+        for (auto *pa : theSlots)
             delete pa;
         theSlots.clear();
     }
 
-    static void add( std::vector<std::string>& vtoken )
+    static void add(std::vector<std::string> &vtoken)
     {
         theSlots.push_back(
-            new cSlot( vtoken[0] )); 
+            new cSlot(vtoken));
     }
 
-    static std::vector< cSlot* >
+    static std::vector<cSlot *>
     getAll()
     {
         return theSlots;
     }
 
-
+    static std::string specText()
+    {
+        std::string ret;
+        for (cSlot *ps : theSlots)
+            ret += ps->text();
+        return ret;
+    }
 };
-

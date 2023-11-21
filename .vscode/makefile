@@ -23,7 +23,17 @@ CCflags = -std=c++17 $(OPT) -D_mingw_
 OBJ_starter = \
 	$(ODIR)/main.o \
 	$(ODIR)/input.o \
+	$(ODIR)/cAgent.o \
+	$(ODIR)/cTask.o \
+	$(ODIR)/cSlot.o \
 	$(ODIR)/unitTest.o \
+
+#includes
+OBJ_includes = \
+	cTask.h \
+	cAgent.h \
+	cAssign.h \
+	cSlot.h \
 
 ### COMPILE
 

@@ -15,18 +15,15 @@ bool unitTest()
         "a Alice 1 A cleaner\n"
         "t 202311011000 cleaner cleaner\n");
 
-    auto va = cAgent::getAll();
-    if( va.size() != 3 )
+    result = specText();
+
+    expected =
+        "a Carol 1 A cleaner\n"
+        "a Bob 1 B cleaner\n"
+        "a Alice 1 A cleaner\n"
+        "t 202311011000 cleaner cleaner";
+    if( expected != result )
         throw std::runtime_error(utname + " unit test failed");
-
-    // auto vt = cTask::getAll();
-    // if( vt.size() != 1 )
-    //     throw std::runtime_error(utname + " unit test failed");
-
-    auto vs = cSlot::getAll();
-    if( vs.size() != 1 )
-        throw std::runtime_error(utname + " unit test failed");
-
 
     return true;
 }

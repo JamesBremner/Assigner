@@ -25,17 +25,15 @@ class cTask
         theTasks.clear();
     }
 
-    static void add( const std::string& name )
-    {
-        theTasks.push_back(
-            new cTask( name )); 
-    }
+    static cTask* add( const std::string& name );
 
     static std::vector< cTask* >
     getAll()
     {
         return theTasks;
     }
+
+    static cTask* find( const std::string& name );
 
 
 };
