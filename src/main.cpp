@@ -7,6 +7,7 @@
 #include <wex.h>
 #include "cStarterGUI.h"
 
+#include "assigner.h"
 #include "cTask.h"
 #include "cAgent.h"
 #include "cAssign.h"

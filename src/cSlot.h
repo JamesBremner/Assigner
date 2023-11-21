@@ -18,7 +18,12 @@ public:
         return myName;
     }
 
-    std::string text();
+    std::string text() const;
+
+    std::vector<cTask *>& getTasks()
+    {
+        return myTasks;
+    }
 
     static void clear()
     {

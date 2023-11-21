@@ -8,7 +8,8 @@ std::vector<cAgent *> cAgent::theAgents;
 std::vector<std::string> cAgent::vFamily;
 
 cAgent::cAgent(const std::vector<std::string> &vtoken)
-    : myName(vtoken[1])
+    : myName(vtoken[1]),
+    myAssigned( false )
 {
     // parse family
 
@@ -42,7 +43,7 @@ cAgent::cAgent(const std::vector<std::string> &vtoken)
 }
 
 
-std::string cAgent::text()
+std::string cAgent::text() const
 {
     std::stringstream ss;
 
@@ -50,7 +51,7 @@ std::string cAgent::text()
         << "a " << myName
         << " " << myTasks[0].second
         << " " << vFamily[myFamily];
-        
+
     for (auto &tp : myTasks)
     {
         ss << " " << tp.first->name();
@@ -72,6 +73,12 @@ void cAgent::add(const std::vector<std::string> &vtoken)
 
     theAgents.push_back(
         new cAgent(vtoken));
+}
+
+void cAgent::unassignAll()
+{
+    for (cAgent *pa : theAgents)
+        pa->assign(false);
 }
 
 std::string cAgent::specText()

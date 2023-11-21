@@ -13,7 +13,7 @@ cSlot::cSlot(const std::vector<std::string> &vtoken)
         myTasks.push_back(cTask::find(vtoken[k]));
 }
 
-std::string cSlot::text()
+std::string cSlot::text() const
 {
     std::stringstream ss;
 

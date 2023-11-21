@@ -4,44 +4,53 @@
 class cAssign
 {
 
-    static std::vector< cAssign* > theAssigns;
+    static std::vector<cAssign *> theAssigns;
 
-    cAgent* myAgent;
-    cTask* myTask;
+    cSlot *mySlot;
+    cAgent *myAgent;
+    cTask *myTask;
 
-    public:
+public:
+    cAssign(cSlot *ps, cAgent *pa, cTask *pt)
+        : myAgent(pa),
+          myTask(pt),
+          mySlot(ps)
+    {
+        pa->assign();
+    }
 
-    cAssign(  cAgent* pa, cTask* pt )
-    : myAgent( pa ),
-    myTask( pt )
-    {}
+    cSlot* slot() const{
+        return mySlot;
+    }
 
     std::string text() const
     {
         std::stringstream ss;
-        ss << myAgent->name() <<" to "<< myTask->name();
+
+        ss << myAgent->name() << " to " << myTask->name();
         return ss.str();
     }
 
-        static void clear()
+    static void clear()
     {
-        for( auto* pa : theAssigns )
+        for (auto *pa : theAssigns)
             delete pa;
         theAssigns.clear();
     }
 
-    static void add( cAgent* pa, cTask* pt )
+    static void add(cSlot *ps, cAgent *pa, cTask *pt)
     {
         theAssigns.push_back(
-            new cAssign( pa, pt )); 
+            new cAssign(ps, pa, pt));
     }
 
-    static std::vector< cAssign* >
+    static std::string text(cSlot *pSlot);
+
+    static std::vector<cAssign *>
     getAll()
     {
         return theAssigns;
     }
-
-
 };
 
+void assign();

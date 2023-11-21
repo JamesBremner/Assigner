@@ -26,6 +26,7 @@ OBJ_starter = \
 	$(ODIR)/cAgent.o \
 	$(ODIR)/cTask.o \
 	$(ODIR)/cSlot.o \
+	$(ODIR)/cAssign.o \
 	$(ODIR)/unitTest.o \
 
 #includes

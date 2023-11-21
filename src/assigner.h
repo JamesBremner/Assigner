@@ -5,6 +5,8 @@
 #include <vector>
 #include <algorithm>
 
+class cSlot;
+
 void readfile(
     const std::string &fname);
 

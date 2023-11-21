@@ -14,6 +14,8 @@ protected:
     static std::vector<std::string> vFamily; // family group names
     int myFamily;                            // family group index
 
+    bool myAssigned;
+
 public:
 
     /// CTOR
@@ -21,12 +23,28 @@ public:
 
     cAgent(const std::vector<std::string> &vtoken);
 
+
+    void assign( bool f = true )
+    {
+        myAssigned = f;
+    }
+
     std::string name() const
     {
         return myName;
     }
 
-    std::string text();
+    double cost( cTask* task ) const
+    {
+        return myTasks[0].second;
+    }
+
+    bool isAssigned() const
+    {
+        return myAssigned;
+    }
+
+    std::string text() const;
 
     static void clear()
     {
@@ -39,6 +57,8 @@ public:
     /// @param vtoken tokenized specification line
 
     static void add(const std::vector<std::string> &vtoken);
+
+    static void unassignAll();
 
     static std::vector<cAgent *>
     getAll()
