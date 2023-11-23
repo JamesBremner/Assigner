@@ -1,5 +1,4 @@
-#include <string>
-#include <vector>
+#pragma once
 
 class cAssign
 {
@@ -9,27 +8,25 @@ class cAssign
     cSlot *mySlot;
     cAgent *myAgent;
     cTask *myTask;
+    cAgentGroup * myGroup;
 
 public:
-    cAssign(cSlot *ps, cAgent *pa, cTask *pt)
-        : myAgent(pa),
-          myTask(pt),
-          mySlot(ps)
-    {
-        pa->assign();
-    }
+
+    // construct assignment of single agent
+    cAssign(cSlot *ps, cAgent *pa, cTask *pt);
+
+    // construct assignment of group agent member
+    cAssign(cSlot *ps, cAgent *pa, cTask *pt, cAgentGroup* pg );
+
 
     cSlot* slot() const{
         return mySlot;
     }
 
-    std::string text() const
-    {
-        std::stringstream ss;
+    /// @brief Get display text for this assignment
+    /// @return 
 
-        ss << myAgent->name() << " to " << myTask->name();
-        return ss.str();
-    }
+    std::string text(const std::string& slotName) const;
 
     static void clear()
     {
@@ -38,19 +35,26 @@ public:
         theAssigns.clear();
     }
 
-    static void add(cSlot *ps, cAgent *pa, cTask *pt)
-    {
-        theAssigns.push_back(
-            new cAssign(ps, pa, pt));
-    }
+    /// @brief Assign agent to task in slot
+    /// @param ps slot
+    /// @param pa agent
+    /// @param pt task
+
+    static void add(cSlot *ps, cAgent *pa, cTask *pt);
+
+    /// @brief Get display text for the assignments in a slot
+    /// @param pSlot 
+    /// @return 
 
     static std::string text(cSlot *pSlot);
 
+    /// @brief get assignments in a timeslot
+    /// @param slot 
+    /// @return 
+
     static std::vector<cAssign *>
-    getAll()
-    {
-        return theAssigns;
-    }
+    getSlotAssigns( cSlot* slot );
+
 };
 
-void assign();
+void Agents2Tasks();

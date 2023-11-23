@@ -1,0 +1,89 @@
+a mwalsh@gmail.com&2010-01-01 1 mwalsh@gmail.com MAS
+a asmith@gmail.com&1998-06-07 1 asmith@gmail.com none
+a rejkid@gmail.com&1961-03-24 1 rejkid@gmail.com Acolyte
+a jblack@gmail.com&1961-03-24 1 jblack@gmail.com EMHC Reader1 Acolyte
+a ismith@gmail.com&1961-07-02 1 ismith@gmail.com Acolyte
+a iblack@gmail.com&1961-07-02 1 iblack@gmail.com none
+a jsmith@gmail.com&1961-03-24 1 jsmith@gmail.com EMHC Reader2
+a ablack@gmail.com&1998-06-07 1 ablack@gmail.com none
+a jwhite@gmail.com&1961-03-24 1 jwhite@gmail.com EMHC Reader1
+a rejkid@gmail.com&1992-08-28 1 rejkid@gmail.com MAS
+a rejkid@gmail.com&1998-06-07 1 rejkid@gmail.com Reader2
+a rejkid@gmail.com&1961-07-02 1 rejkid@gmail.com Reader1
+a iwhite@gmail.com&1961-07-02 1 iwhite@gmail.com none
+a awhite@gmail.com&1998-06-07 1 awhite@gmail.com none
+a osiekkolawy@gmail.com&1961-03-24 1 osiekkolawy@gmail.com MAS
+g mwalsh@gmail.com&2010-01-01_group mwalsh@gmail.com&2010-01-01
+g asmith@gmail.com&1998-06-07_group asmith@gmail.com&1998-06-07 rejkid@gmail.com&1961-03-24 ismith@gmail.com&1961-07-02
+g iblack@gmail.com&1961-07-02_group iblack@gmail.com&1961-07-02 ablack@gmail.com&1998-06-07 iwhite@gmail.com&1961-07-02 awhite@gmail.com&1998-06-07
+t 202310220830 Acolyte Acolyte MAS MAS Reader1 Reader2 EMHC EMHC
+t 202310221000 Acolyte MAS MAS Reader1 Reader2 EMHC
+t 202310290830 Acolyte MAS Reader1 Reader2 EMHC EMHC
+t 202310291000 Acolyte MAS Reader1 Reader2 EMHC
+t 202311050830 Acolyte MAS Reader1 Reader2 EMHC
+t 202311051000 Acolyte Acolyte MAS MAS Reader1 Reader2 EMHC EMHC
+t 202312051000 Cleaner
+t 202312121000 Cleaner
+A 202310220830 mwalsh@gmail.com&2010-01-01_group to Acolyte
+A 202310220830 mwalsh@gmail.com&2010-01-01 in mwalsh@gmail.com&2010-01-01_group to Acolyte
+A 202310220830 asmith@gmail.com&1998-06-07_group to Acolyte
+A 202310220830 asmith@gmail.com&1998-06-07 in asmith@gmail.com&1998-06-07_group to Acolyte
+A 202310220830 rejkid@gmail.com&1961-03-24 in asmith@gmail.com&1998-06-07_group to Acolyte
+A 202310220830 ismith@gmail.com&1961-07-02 in asmith@gmail.com&1998-06-07_group to Acolyte
+A 202310220830 iblack@gmail.com&1961-07-02_group to MAS
+A 202310220830 iblack@gmail.com&1961-07-02 in iblack@gmail.com&1961-07-02_group to MAS
+A 202310220830 ablack@gmail.com&1998-06-07 in iblack@gmail.com&1961-07-02_group to MAS
+A 202310220830 iwhite@gmail.com&1961-07-02 in iblack@gmail.com&1961-07-02_group to MAS
+A 202310220830 awhite@gmail.com&1998-06-07 in iblack@gmail.com&1961-07-02_group to MAS
+A 202310220830 rejkid@gmail.com&1992-08-28 to MAS
+A 202310220830 rejkid@gmail.com&1998-06-07 to Reader1
+A 202310220830 rejkid@gmail.com&1961-07-02 to Reader2
+A 202310220830 jblack@gmail.com&1961-03-24 to EMHC
+A 202310220830 jsmith@gmail.com&1961-03-24 to EMHC
+A 202310221000 jwhite@gmail.com&1961-03-24 to Acolyte
+A 202310221000 osiekkolawy@gmail.com&1961-03-24 to MAS
+A 202310290830 iblack@gmail.com&1961-07-02_group to Acolyte
+A 202310290830 iblack@gmail.com&1961-07-02 in iblack@gmail.com&1961-07-02_group to Acolyte
+A 202310290830 ablack@gmail.com&1998-06-07 in iblack@gmail.com&1961-07-02_group to Acolyte
+A 202310290830 iwhite@gmail.com&1961-07-02 in iblack@gmail.com&1961-07-02_group to Acolyte
+A 202310290830 awhite@gmail.com&1998-06-07 in iblack@gmail.com&1961-07-02_group to Acolyte
+A 202310290830 asmith@gmail.com&1998-06-07_group to MAS
+A 202310290830 asmith@gmail.com&1998-06-07 in asmith@gmail.com&1998-06-07_group to MAS
+A 202310290830 rejkid@gmail.com&1961-03-24 in asmith@gmail.com&1998-06-07_group to MAS
+A 202310290830 ismith@gmail.com&1961-07-02 in asmith@gmail.com&1998-06-07_group to MAS
+A 202310290830 mwalsh@gmail.com&2010-01-01_group to Reader1
+A 202310290830 mwalsh@gmail.com&2010-01-01 in mwalsh@gmail.com&2010-01-01_group to Reader1
+A 202310290830 rejkid@gmail.com&1961-07-02 to Reader2
+A 202310290830 rejkid@gmail.com&1998-06-07 to EMHC
+A 202310290830 rejkid@gmail.com&1992-08-28 to EMHC
+A 202310291000 jwhite@gmail.com&1961-03-24 to Acolyte
+A 202310291000 osiekkolawy@gmail.com&1961-03-24 to MAS
+A 202310291000 jblack@gmail.com&1961-03-24 to Reader1
+A 202310291000 jsmith@gmail.com&1961-03-24 to Reader2
+A 202311050830 mwalsh@gmail.com&2010-01-01_group to Acolyte
+A 202311050830 mwalsh@gmail.com&2010-01-01 in mwalsh@gmail.com&2010-01-01_group to Acolyte
+A 202311050830 asmith@gmail.com&1998-06-07_group to MAS
+A 202311050830 asmith@gmail.com&1998-06-07 in asmith@gmail.com&1998-06-07_group to MAS
+A 202311050830 rejkid@gmail.com&1961-03-24 in asmith@gmail.com&1998-06-07_group to MAS
+A 202311050830 ismith@gmail.com&1961-07-02 in asmith@gmail.com&1998-06-07_group to MAS
+A 202311050830 iblack@gmail.com&1961-07-02_group to Reader1
+A 202311050830 iblack@gmail.com&1961-07-02 in iblack@gmail.com&1961-07-02_group to Reader1
+A 202311050830 ablack@gmail.com&1998-06-07 in iblack@gmail.com&1961-07-02_group to Reader1
+A 202311050830 iwhite@gmail.com&1961-07-02 in iblack@gmail.com&1961-07-02_group to Reader1
+A 202311050830 awhite@gmail.com&1998-06-07 in iblack@gmail.com&1961-07-02_group to Reader1
+A 202311050830 rejkid@gmail.com&1992-08-28 to Reader2
+A 202311050830 rejkid@gmail.com&1998-06-07 to EMHC
+A 202311051000 rejkid@gmail.com&1961-07-02 to Acolyte
+A 202311051000 jwhite@gmail.com&1961-03-24 to Acolyte
+A 202311051000 osiekkolawy@gmail.com&1961-03-24 to MAS
+A 202311051000 jblack@gmail.com&1961-03-24 to MAS
+A 202311051000 jsmith@gmail.com&1961-03-24 to Reader1
+A 202312051000 iblack@gmail.com&1961-07-02_group to Cleaner
+A 202312051000 iblack@gmail.com&1961-07-02 in iblack@gmail.com&1961-07-02_group to Cleaner
+A 202312051000 ablack@gmail.com&1998-06-07 in iblack@gmail.com&1961-07-02_group to Cleaner
+A 202312051000 iwhite@gmail.com&1961-07-02 in iblack@gmail.com&1961-07-02_group to Cleaner
+A 202312051000 awhite@gmail.com&1998-06-07 in iblack@gmail.com&1961-07-02_group to Cleaner
+A 202312121000 asmith@gmail.com&1998-06-07_group to Cleaner
+A 202312121000 asmith@gmail.com&1998-06-07 in asmith@gmail.com&1998-06-07_group to Cleaner
+A 202312121000 rejkid@gmail.com&1961-03-24 in asmith@gmail.com&1998-06-07_group to Cleaner
+A 202312121000 ismith@gmail.com&1961-07-02 in asmith@gmail.com&1998-06-07_group to Cleaner

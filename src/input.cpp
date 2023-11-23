@@ -1,14 +1,12 @@
-#include "assigner.h"
-#include "cTask.h"
-#include "cAgent.h"
-#include "cAssign.h"
-#include "cSlot.h"
+#include "Agents2Tasks.h"
+
 
 void input(
     std::istream &ifs)
 {
     cTask::clear();
     cAgent::clear();
+    cSlot::clear();
     cAssign::clear();
 
     std::string line;
@@ -29,7 +27,7 @@ void input(
             break;
 
         case 'g':
-            // allocator.addAgentGroup( vtoken );
+            cAgentGroup::add(vtoken);
             break;
 
         case 't':
@@ -38,9 +36,11 @@ void input(
         }
     }
 
-    // allocator.isAgentSane();
-    // allocator.isSlotSane();
-    // allocator.log( allocator.textProblem() );
+    cAgent::saveInputOrder();
+
+    cAgent::isSane();
+    cSlot::isSane();
+
 }
 
 void readfile(
@@ -65,4 +65,16 @@ std::string specText()
     ret += cAgent::specText();
     ret += cSlot::specText();
     return ret;
+}
+
+void writefile( const std::string& fname )
+{
+    std::ofstream ofs( fname );
+    if( ! ofs.is_open() )
+            throw std::runtime_error("14 Cannot open output file");
+    ofs << specText();
+    for( cSlot* ps : cSlot::getAll() )
+    {
+        ofs << cAssign::text( ps );
+    }
 }

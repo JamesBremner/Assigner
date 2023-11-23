@@ -3,7 +3,6 @@ VPATH = ./src
 
 	# compiler include search paths
 INCS = -I./include \
-	-I../windex/include \
 	-I../raven-set \
 
 
@@ -38,13 +37,13 @@ OBJ_includes = \
 
 ### COMPILE
 
-$(ODIR)/%.o: %.cpp  
-	g++  $(CCflags) \
-	-c -o $@ $< $(INCS)
+$(ODIR)/%.o: %.cpp  $(OBJ_includes)
+	g++ $<  \
+	-c -o $@  $(INCS) $(CCflags)
 
-starter: $(OBJ_starter)
+a2t: $(OBJ_starter)
 	g++ $(OPT) \
-	-o bin/starter.exe $^  \
+	-o bin/Agents2Tasks.exe $^  \
 	$(static_link_flags) $(LIBS)
 
 .PHONY: clean

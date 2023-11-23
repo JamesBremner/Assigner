@@ -1,4 +1,3 @@
-#include "assigner.h"
 
 class cSlot
 {
@@ -9,6 +8,9 @@ protected:
     std::string myName;
 
     std::vector<cTask *> myTasks;
+
+    std::set<int> myFamily;   // indices of family groups assigned to this slot
+
 
 public:
     cSlot(const std::vector<std::string> &vtoken);
@@ -25,10 +27,28 @@ public:
         return myTasks;
     }
 
+    bool hasFamily( int family ) const;
+
+    /// @brief get integer representation for day containing timeslot
+    /// @return integer day
+    ///
+    /// Assumes slot name format YYYYMMDDHHMM
+    /// returns int( YYYYMMDD )
+
+    int day() const
+    {
+        return atoi(myName.substr(0, 8).c_str());
+    }
+
+    void assign(int iFamily)
+    {
+        myFamily.insert(iFamily);
+    }
+
     static void clear()
     {
-        for (auto *pa : theSlots)
-            delete pa;
+        for (auto *ps : theSlots)
+            delete ps;
         theSlots.clear();
     }
 
@@ -37,6 +57,8 @@ public:
         theSlots.push_back(
             new cSlot(vtoken));
     }
+
+    static bool isSane();
 
     static std::vector<cSlot *>
     getAll()
@@ -48,7 +70,7 @@ public:
     {
         std::string ret;
         for (cSlot *ps : theSlots)
-            ret += ps->text();
+            ret += ps->text() + "\n";
         return ret;
     }
 };

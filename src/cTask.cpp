@@ -1,8 +1,7 @@
-#include "assigner.h"
-#include "cTask.h"
-#include "cAgent.h"
-#include "cAssign.h"
-#include "cSlot.h"
+#include "Agents2Tasks.h"
+
+
+std::vector< cTask* > cTask::theTasks;
 
 cTask *cTask::find(const std::string &name)
 {

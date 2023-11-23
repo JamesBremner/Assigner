@@ -1,49 +1,59 @@
-#include <string>
-#include <fstream>
-#include <sstream>
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <wex.h>
-#include "cStarterGUI.h"
-
-#include "assigner.h"
-#include "cTask.h"
-#include "cAgent.h"
-#include "cAssign.h"
-#include "cSlot.h"
-
- std::vector< cTask* > cTask::theTasks;
-
- std::vector< cAssign* > cAssign::theAssigns;
+#include "Agents2Tasks.h"
 
 
 
-class cGUI : public cStarterGUI
+void errorHandler(
+    const std::string &msg)
 {
-public:
-    cGUI()
-        : cStarterGUI(
-              "Starter",
-              {50, 50, 1000, 500}),
-          lb(wex::maker::make < wex::label >(fm))
+    int status = atoi(msg.c_str());
+    if (!status)
+        status = 2;
+    std::cout << msg << "\n"
+              << "status " << status << "\n";
+    exit(status);
+}
+
+main(int argc, char *argv[])
+{
+    if (argc != 3)
+        errorHandler(
+            "3 "
+            "Usage: Agents2Tasks (input file path) ( output file path )");
+
+
+    // run unit tests
+
+    try
     {
+        if (!unitTest())
+            throw std::runtime_error("16 Unit test failed");
+    }
+    catch (std::exception &e)
+    {
+        std::string msg = "16 " + std::string(e.what());
+        //A.log(msg);
+        throw std::runtime_error(msg);
+    }
+    std::cout << "Unit tests passed\n\n";
 
-        unitTest();
+    // run calculation
 
-        lb.move(50, 50, 150, 30);
-        lb.text("Unit tests passed");
+    try
+    {
+        
+         readfile(argv[1]);
+         Agents2Tasks();
+         writefile( argv[2]);
 
-        show();
-        run();
+        // A.log("\n============ Assignments ===========\n\n");
+        // A.log(A.getSolutionAgents2Task().textFile('A'));
+    }
+    catch (std::exception &e)
+    {
+       // A.log("Exception " + std::string(e.what()));
+        errorHandler(
+            e.what());
     }
 
-private:
-    wex::label &lb;
-};
-
-main()
-{
-    cGUI theGUI;
     return 0;
 }
